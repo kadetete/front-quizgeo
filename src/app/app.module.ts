@@ -10,11 +10,15 @@ import { LoginComponent } from './login/login.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import {StyleClassModule} from 'primeng/styleclass';
 import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import {RippleModule} from 'primeng/ripple';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +27,8 @@ import { ButtonModule } from 'primeng/button';
     CheckboxModule,
     StyleClassModule,
     ButtonModule,
+    InputTextModule,
+    RippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
