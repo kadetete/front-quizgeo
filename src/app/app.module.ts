@@ -11,8 +11,11 @@ import { CheckboxModule } from 'primeng/checkbox';
 import {StyleClassModule} from 'primeng/styleclass';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import {RippleModule} from 'primeng/ripple';
+import { RippleModule } from 'primeng/ripple';
 import { HomeComponent } from './home/home.component';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { TabViewModule } from 'primeng/tabview';
+import { CarouselModule } from 'primeng/carousel';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { HomeComponent } from './home/home.component';
     StyleClassModule,
     ButtonModule,
     InputTextModule,
-    RippleModule
+    RippleModule,
+    TabMenuModule,
+    TabViewModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

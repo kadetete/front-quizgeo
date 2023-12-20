@@ -2,11 +2,29 @@
     <img src="../assets/images/logos/globo.png" alt="Logo globo" height="50" class="mb-3">
     <h3>Geoquizzler</h3>
     <div class="login">
-        <p-button label="Login" icon="pi pi-user"></p-button>
+        <p-button label="Login" icon="pi pi-user" (click)="login()"></p-button>
     </div>
 </div>
 <hr>
 <div>
-<h2>Os nossos quizzes</h2>
-
+    <p-tabView>
+        <p-tabPanel header="Quizzes" leftIcon="pi pi-fw pi-home">
+            <p-carousel [value]="quizzes">
+                <ng-template let-quiz pTemplate="item">
+                    <div class="quiz-item">
+                        <img [src]="quiz.imageUrl" alt="{{ quiz.title }}" class="quiz-image">
+                        <div class="quiz-title">{{ quiz.title }}</div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </p-tabPanel>
+        <p-tabPanel header="Configurações" leftIcon="pi pi-fw pi-cog">
+            <!-- Conteúdo da aba Configurações -->
+            <p>Conteúdo da aba Configurações</p>
+        </p-tabPanel>
+        <p-tabPanel header="Perfil" leftIcon="pi pi-fw pi-user">
+            <!-- Conteúdo da aba Perfil -->
+            <p>Conteúdo da aba Perfil</p>
+        </p-tabPanel>
+    </p-tabView>
 </div>
