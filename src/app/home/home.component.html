@@ -2,6 +2,7 @@
     <img src="../assets/images/logos/globo.png" alt="Logo globo" height="50" class="mb-3">
     <h3>Geoquizzler</h3>
     <div class="login">
+        <p-button label="Sobre nós" [text]="true" (click)="sobre()"></p-button>
         <p-button label="Login" icon="pi pi-user" (click)="login()"></p-button>
     </div>
 </div>
@@ -19,8 +20,12 @@
             </p-carousel>
         </p-tabPanel>
         <p-tabPanel header="Configurações" leftIcon="pi pi-fw pi-cog">
-            <label for="switch">Tema Escuro</label>
-            <p-inputSwitch id="switch" [(ngModel)]="ativo" (onChange)="mudarTema()"></p-inputSwitch>
+            <table>
+                <tr>
+                    <label for="switch">Tema Escuro</label> &nbsp;
+                    <p-inputSwitch id="switch" [(ngModel)]="ativo" (onChange)="mudarTema()"></p-inputSwitch>
+                </tr>
+            </table>
         </p-tabPanel>
         <p-tabPanel header="Perfil" leftIcon="pi pi-fw pi-user">
             <!-- Conteúdo da aba Perfil -->

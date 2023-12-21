@@ -17,13 +17,15 @@ import { CarouselModule } from 'primeng/carousel';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import{ FormsModule } from '@angular/forms';
 import { RegistrarComponent } from './registrar/registrar.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    SobreComponent
   ],
   imports: [
     BrowserModule,

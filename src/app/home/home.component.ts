@@ -32,4 +32,8 @@ export class HomeComponent {
     this.router.navigate(['/login']);
   }
 
+  sobre(): void {
+    this.router.navigate(['/sobre']);
+  }
+
 }
