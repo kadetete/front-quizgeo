@@ -19,8 +19,8 @@
             </p-carousel>
         </p-tabPanel>
         <p-tabPanel header="Configurações" leftIcon="pi pi-fw pi-cog">
-            <!-- Conteúdo da aba Configurações -->
-            <p>Conteúdo da aba Configurações</p>
+            <label for="switch">Tema Escuro</label>
+            <p-inputSwitch id="switch" [(ngModel)]="ativo" (onChange)="mudarTema()"></p-inputSwitch>
         </p-tabPanel>
         <p-tabPanel header="Perfil" leftIcon="pi pi-fw pi-user">
             <!-- Conteúdo da aba Perfil -->

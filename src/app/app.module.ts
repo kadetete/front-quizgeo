@@ -5,8 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-
-// primeng
 import { CheckboxModule } from 'primeng/checkbox';
 import {StyleClassModule} from 'primeng/styleclass';
 import { ButtonModule } from 'primeng/button';
@@ -16,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { TabViewModule } from 'primeng/tabview';
 import { CarouselModule } from 'primeng/carousel';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import{ FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,8 @@ import { CarouselModule } from 'primeng/carousel';
     TabMenuModule,
     TabViewModule,
     CarouselModule,
+    FormsModule,
+    InputSwitchModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

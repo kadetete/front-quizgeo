@@ -35,7 +35,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              {
+                "input": "src/md-dark-deeppurple.css",
+                "bundleName": "md-dark-deeppurple",
+                "inject": false
+              },
+              {
+                "input": "src/md-light-deeppurple.css",
+                "bundleName": "md-light-deeppurple",
+                "inject": false
+              }
             ],
             "scripts": []
           },
