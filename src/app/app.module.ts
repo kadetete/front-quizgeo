@@ -16,12 +16,14 @@ import { TabViewModule } from 'primeng/tabview';
 import { CarouselModule } from 'primeng/carousel';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import{ FormsModule } from '@angular/forms';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,
