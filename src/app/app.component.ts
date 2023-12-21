@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'geoquiz';
+
+  constructor(private router: Router) {}
+
+  login(): void {
+    this.router.navigate(['/login']);
+  }
+
+  sobre(): void {
+    this.router.navigate(['/sobre']);
+  }
+
+  home(): void {
+    this.router.navigate(['/home']);
+  }
 }

@@ -28,12 +28,8 @@ export class HomeComponent {
     this.temaServico.switchTheme(tema);
   }
 
-  login(): void {
-    this.router.navigate(['/login']);
-  }
-
-  sobre(): void {
-    this.router.navigate(['/sobre']);
+  creditos(): void {
+    this.router.navigate(['/creditos']);
   }
 
 }

@@ -18,6 +18,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import{ FormsModule } from '@angular/forms';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { CreditosComponent } from './creditos/creditos.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SobreComponent } from './sobre/sobre.component';
     LoginComponent,
     HomeComponent,
     RegistrarComponent,
-    SobreComponent
+    SobreComponent,
+    CreditosComponent
   ],
   imports: [
     BrowserModule,
