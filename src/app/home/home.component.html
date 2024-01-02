@@ -4,7 +4,7 @@
             <p-carousel [value]="quizzes">
                 <ng-template let-quiz pTemplate="item">
                     <div class="quiz-item">
-                        <img [src]="quiz.imageUrl" alt="{{ quiz.title }}" class="quiz-image">
+                        <img [src]="quiz.imageUrl" alt="{{ quiz.title }}" class="quiz-image" style="max-width: 600px;">
                         <div class="quiz-title">{{ quiz.title }}</div>
                     </div>
                 </ng-template>
