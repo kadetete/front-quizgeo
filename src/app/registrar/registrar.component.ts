@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './registrar.component.css'
 })
 export class RegistrarComponent {
-  usuario = '';
+  nome = '';
   email = '';
   senha = '';
   invalido = false;
@@ -16,8 +16,8 @@ export class RegistrarComponent {
   constructor(private loginService: LoginService, private router: Router) {}
 
   registrar(): void {
-    if (this.usuario != '' || this.email != '' || this.senha != '') {
-      this.loginService.novoUsuario(this.usuario, this.email, this.senha).subscribe(
+    if (this.nome != '' || this.email != '' || this.senha != '') {
+      this.loginService.novoUsuario(this.nome, this.email, this.senha).subscribe(
         (res: any) => {
           this.router.navigate(['/login']);
         },

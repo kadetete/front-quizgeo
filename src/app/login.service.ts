@@ -18,6 +18,7 @@ export class LoginService {
       tap((res: any) => {
         if (res && res.token) {
           this.cookieService.set('token', res.token);
+          this.cookieService.set('email', email);
         }
       })
     );
@@ -38,7 +39,7 @@ export class LoginService {
     return false;
   }
 
-  novoUsuario(usuario: string, email: string, senha:  string): Observable<any> {
-    return this.http.post(`${this.baseUrl}/usuario`, { usuario, email, senha });
+  novoUsuario(nome: string, email: string, senha:  string): Observable<any> {
+    return this.http.post(`${this.baseUrl}/usuario`, { nome, email, senha });
   }
 }
