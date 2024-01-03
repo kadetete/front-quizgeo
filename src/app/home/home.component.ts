@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TemaService } from '../tema.service';
 import { CookieService } from 'ngx-cookie-service';
+import { QuizService } from '../quiz.service';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,9 @@ import { CookieService } from 'ngx-cookie-service';
 export class HomeComponent implements OnInit{
   quizzes: any[] = []
   ativo: boolean = false;
+  quizSelecionado: any = null;
 
-  constructor(private router: Router, private temaServico: TemaService, private cookieService: CookieService) {}
+  constructor(private router: Router, private temaServico: TemaService, private cookieService: CookieService, private quizServico: QuizService) {}
 
   ngOnInit(): void {
     if (this.cookieService.get('dark') == 'true') {
@@ -20,6 +22,7 @@ export class HomeComponent implements OnInit{
     } else {
       this.ativo = false;
     }
+    this.onListar();
   }
 
   mudarTema(): void {
@@ -35,6 +38,17 @@ export class HomeComponent implements OnInit{
 
   creditos(): void {
     this.router.navigate(['/creditos']);
+  }
+
+  onListar(): void {
+    this.quizServico.getQuizzes().subscribe((quizzes: any) => {
+      this.quizzes = quizzes.content;
+      console.log(quizzes);
+    });
+  }
+
+  jogar(quizId: any) {
+    this.router.navigate([`/quiz/${quizId}`]);
   }
 
 }

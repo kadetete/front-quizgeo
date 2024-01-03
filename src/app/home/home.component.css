@@ -3,9 +3,34 @@ a {
 }
 .titulo {
     text-align: center;
+    font-size: 1.2em;
+}
+.carrosel {
+    outline-style: auto;
+    outline-color: grey;
+    outline-width: 1px;
 }
 .link-button {
     display: flex;
     justify-content: center;
     flex-direction: row-reverse;
+}
+
+.quiz-title {
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: green;
+}
+
+.quiz-descricao {
+    text-align: center;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+.quiz-botao {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1em;
 }

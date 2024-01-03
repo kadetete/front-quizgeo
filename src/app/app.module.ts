@@ -22,6 +22,7 @@ import { SobreComponent } from './sobre/sobre.component';
 import { CreditosComponent } from './creditos/creditos.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { MenuComponent } from './menu/menu.component';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { MenuComponent } from './menu/menu.component';
     FormsModule,
     InputSwitchModule,
     HttpClientModule,
+    TableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

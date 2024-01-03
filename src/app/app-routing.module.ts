@@ -10,7 +10,7 @@ import { QuizComponent } from './quiz/quiz.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'quiz', component: QuizComponent, canActivate: [AuthGuard] },
+  { path: 'quiz/:id', component: QuizComponent, canActivate: [AuthGuard] },
   { path: 'registro', component: RegistrarComponent },
   { path: 'creditos', component: CreditosComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'home' },

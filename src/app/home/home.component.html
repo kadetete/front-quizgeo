@@ -3,16 +3,45 @@
     <p-tabView>
         <p-tabPanel header="Quizzes" leftIcon="pi pi-fw pi-home" class="panel">
             <h2 class="titulo">Quizzes em destaque</h2>
-            <p-carousel [value]="quizzes">
+            <br>
+            <br>
+            <p-carousel class="carrosel" [value]="quizzes">
                 <ng-template let-quiz pTemplate="item">
                     <div class="quiz-item">
+                        <br>
+                        <br>
                         <div class="quiz-title">{{ quiz.nome }}</div>
+                        <br>
                         <div class="quiz-descricao">{{ quiz.descricao }}</div>
-                        <div class="jogar"></div>
-                        <p-button label="Jogar" icon="pi pi-play"></p-button>
+                        <br>
+                        <p-button class="quiz-botao" label="Jogar" icon="pi pi-play" (click)="jogar(quiz.id)"></p-button>
                     </div>
                 </ng-template>
             </p-carousel>
+            <br>
+            <br>
+            <h2 class="titulo">Todos os quizzes</h2>
+            <br>
+            <br>
+            <p-table [paginator]="true" [value]="quizzes" dataKey="id"
+            [rows]="10" [rowsPerPageOptions]="[10, 50, 100]" [autoLayout]="true"
+            selectionMode="single" [(selection)]="quizSelecionado" 
+            >
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="nome">Nome <p-sortIcon field="nome"></p-sortIcon></th>
+                        <th pSortableColumn="descricao">Descrição <p-sortIcon field="descricao"></p-sortIcon></th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-quiz>
+                    <tr pSelectableRow="quizzes">
+                        <td>{{ quiz.nome }}</td>
+                        <td>{{ quiz.descricao }}</td>
+                        <td><p-button class="quiz-botao" label="Jogar" icon="pi pi-play" (click)="jogar(quiz.id)"></p-button></td>
+                    </tr>
+                </ng-template>
+            </p-table>
         </p-tabPanel>
         <p-tabPanel header="Perfil" leftIcon="pi pi-fw pi-user" class="panel">
             <table>
@@ -29,4 +58,5 @@
 </div>
 <hr>
 <br>
-<p-button class="link-button" (click)="creditos()" label="Créditos e agradecimentos" icon="pi pi-heart-fill" [text]="true"></p-button> 
+<p-button class="link-button" (click)="creditos()" label="Créditos e agradecimentos" icon="pi pi-heart-fill"
+    [text]="true"></p-button>
