@@ -37,4 +37,8 @@ export class LoginService {
     this.autenticado = false;
     return false;
   }
+
+  novoUsuario(usuario: string, email: string, senha:  string): Observable<any> {
+    return this.http.post(`${this.baseUrl}/usuario`, { usuario, email, senha });
+  }
 }

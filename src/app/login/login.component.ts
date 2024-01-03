@@ -11,7 +11,6 @@ import { CookieService } from 'ngx-cookie-service';
 export class LoginComponent {
   email = '';
   senha = '';
-  usuario = '';
   loginInvalido = false;
 
   constructor(private router: Router, private loginService: LoginService, private cookieService: CookieService) {}
