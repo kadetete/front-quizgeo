@@ -1,3 +1,11 @@
 a {
     color: blue;
 }
+.titulo {
+    text-align: center;
+}
+.link-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}

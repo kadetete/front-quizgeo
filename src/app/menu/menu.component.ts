@@ -16,10 +16,6 @@ export class MenuComponent {
     window.location.reload();
   }
 
-  sobre(): void {
-    this.router.navigate(['/sobre']);
-  }
-
   home(): void {
     this.router.navigate(['/home']);
   }

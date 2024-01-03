@@ -1,17 +1,20 @@
 <app-menu></app-menu>
 <div>
     <p-tabView>
-        <p-tabPanel header="Quizzes" leftIcon="pi pi-fw pi-home">
+        <p-tabPanel header="Quizzes" leftIcon="pi pi-fw pi-home" class="panel">
+            <h2 class="titulo">Quizzes em destaque</h2>
             <p-carousel [value]="quizzes">
                 <ng-template let-quiz pTemplate="item">
                     <div class="quiz-item">
-                        <img [src]="quiz.imageUrl" alt="{{ quiz.title }}" class="quiz-image" style="max-width: 600px;">
-                        <div class="quiz-title">{{ quiz.title }}</div>
+                        <div class="quiz-title">{{ quiz.nome }}</div>
+                        <div class="quiz-descricao">{{ quiz.descricao }}</div>
+                        <div class="jogar"></div>
+                        <p-button label="Jogar" icon="pi pi-play"></p-button>
                     </div>
                 </ng-template>
             </p-carousel>
         </p-tabPanel>
-        <p-tabPanel header="Configurações" leftIcon="pi pi-fw pi-cog">
+        <p-tabPanel header="Perfil" leftIcon="pi pi-fw pi-user" class="panel">
             <table>
                 <tr>
                     <label for="switch">Tema Escuro</label> &nbsp;
@@ -19,12 +22,11 @@
                 </tr>
             </table>
         </p-tabPanel>
-        <p-tabPanel header="Perfil" leftIcon="pi pi-fw pi-user">
-            <!-- Conteúdo da aba Perfil -->
-            <p>Conteúdo da aba Perfil</p>
+        <p-tabPanel header="Sobre nós" leftIcon="pi pi-info-circle" class="panel">
+            <app-sobre></app-sobre>
         </p-tabPanel>
     </p-tabView>
 </div>
 <hr>
 <br>
-<a (click)="creditos()">Créditos e agradecimentos</a>
+<p-button class="link-button" (click)="creditos()" label="Créditos e agradecimentos" icon="pi pi-heart-fill" [text]="true"></p-button> 
