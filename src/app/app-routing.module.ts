@@ -5,13 +5,14 @@ import { HomeComponent } from './home/home.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { CreditosComponent } from './creditos/creditos.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'registro', component: RegistrarComponent},
-  { path: 'sobre', component: SobreComponent},
-  { path: 'creditos', component: CreditosComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'registro', component: RegistrarComponent },
+  { path: 'sobre', component: SobreComponent, canActivate: [AuthGuard] },
+  { path: 'creditos', component: CreditosComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'home' },
   
 ];

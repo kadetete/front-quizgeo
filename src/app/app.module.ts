@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CheckboxModule } from 'primeng/checkbox';
-import {StyleClassModule} from 'primeng/styleclass';
+import { StyleClassModule } from 'primeng/styleclass';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
@@ -15,10 +16,11 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { TabViewModule } from 'primeng/tabview';
 import { CarouselModule } from 'primeng/carousel';
 import { InputSwitchModule } from 'primeng/inputswitch';
-import{ FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { CreditosComponent } from './creditos/creditos.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { CreditosComponent } from './creditos/creditos.component';
     HomeComponent,
     RegistrarComponent,
     SobreComponent,
-    CreditosComponent
+    CreditosComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { CreditosComponent } from './creditos/creditos.component';
     CarouselModule,
     FormsModule,
     InputSwitchModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
