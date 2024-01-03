@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuItem } from 'primeng/api';
 import { TemaService } from '../tema.service';
 
 @Component({
@@ -8,15 +7,15 @@ import { TemaService } from '../tema.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
-  quizzes: any[] = [
-  {title: 'Brasil', description: 'Quiz sobre o país Brasil.', link: '/quiz/brasil', imageUrl: 'https://images.pexels.com/photos/351283/pexels-photo-351283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}, 
-  {title: 'Quiz 2', description: 'This is the second quiz', id: 2}, 
-  {title: 'Quiz 3', description: 'This is the third quiz', id: 3}
-]
+export class HomeComponent implements OnInit{
+  quizzes: any[] = []
   ativo: boolean = false;
 
   constructor(private router: Router, private temaServico: TemaService) {}
+
+  ngOnInit(): void {
+    
+  }
 
   mudarTema(): void {
     let tema;

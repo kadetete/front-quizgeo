@@ -21,6 +21,7 @@ import { RegistrarComponent } from './registrar/registrar.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { CreditosComponent } from './creditos/creditos.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { QuizComponent } from './quiz/quiz.component';
     RegistrarComponent,
     SobreComponent,
     CreditosComponent,
-    QuizComponent
+    QuizComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
