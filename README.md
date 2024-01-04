@@ -2,7 +2,7 @@
 
 O Geoquizzler é uma plataforma online dedicada a desafiar seus conhecimentos geográficos por meio de um sistema de perguntas diversas. Nosso objetivo é proporcionar uma experiência interativa e educativa, permitindo que os usuários testem e aprimorem seus conhecimentos de geografia de maneira divertida.
 
-### Funcionalidades Principais 
+## Funcionalidades Principais 
 
 - **Cadastro login e senha:** Os usuários podem criar uma conta gratuita no site, informando seu nome, e-mail e senha. Isso permite que eles acessem o quiz, vejam seu histórico de pontuação.
 
@@ -17,4 +17,11 @@ O Geoquizzler é uma plataforma online dedicada a desafiar seus conhecimentos ge
 
 - **Sobre nós:** Explore informações sobre os criadores do sistema, destacando suas contribuições para a plataforma podendo tambem acessar os Links para o GitHub de cada um dos criadores. Conheça as mentes por trás da inovação geográfica.
 
+## Diagramas
 
+
+### Modelo relacional do Banco de dados
+![Modelo relacional do banco de dados](./src/assets/images/documentacao/db_relacional.png)
+
+### Diagrama de caso de uso
+![Caso de uso](./src/assets/images/documentacao/casodeuso.jpg)
