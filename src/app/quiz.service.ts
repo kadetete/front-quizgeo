@@ -20,8 +20,12 @@ export class QuizService {
     return this.http.get(`${this.baseUrl}/quiz/${id}`, { headers: this.headers });
   }
 
-  getPontuacao(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/pontuacao`, { headers: this.headers });
+  getPontuacao(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/pontuacao/${id}`, { headers: this.headers });
+  }
+
+  getUsuarioporEmail(email: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/usuario/email/${email}`, { headers: this.headers });
   }
 
   cadastrarPontuacao(pontuacao: number, usuario_id: number, quiz_id: number): Observable<any> {

@@ -46,10 +46,30 @@
         <p-tabPanel header="Perfil" leftIcon="pi pi-fw pi-user" class="panel">
             <table>
                 <tr>
-                    <label for="switch">Tema Escuro</label> &nbsp;
-                    <p-inputSwitch id="switch" [(ngModel)]="ativo" (onChange)="mudarTema()"></p-inputSwitch>
+                    <td><img class="avatar" src="..\assets\images\perfil\blank-profile-picture-973460_1280.png" alt="Imagem do perfil do usuário"></td>
+                    <td>
+                        Email: {{ email }} <br>
+                        Usuario: {{ usuario}} <br> <br>
+                        <label for="switch">Tema Escuro</label> &nbsp;
+                        <p-inputSwitch id="switch" [(ngModel)]="ativo" (onChange)="mudarTema()"></p-inputSwitch>
+                    </td>
                 </tr>
             </table>
+            <br>
+            <br>
+            <hr>
+            <p-table>
+                <ng-template pTemplate="header">
+                    <th>Nome</th>
+                    <th>Pontuação</th>
+                </ng-template>
+                <ng-template pTemplate="body">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </ng-template>
+            </p-table>
         </p-tabPanel>
         <p-tabPanel header="Sobre nós" leftIcon="pi pi-info-circle" class="panel">
             <app-sobre></app-sobre>

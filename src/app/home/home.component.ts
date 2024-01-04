@@ -13,14 +13,18 @@ export class HomeComponent implements OnInit{
   quizzes: any[] = []
   ativo: boolean = false;
   quizSelecionado: any = null;
+  email: any = null;
+  usuario: any = null;
 
   constructor(private router: Router, private temaServico: TemaService, private cookieService: CookieService, private quizServico: QuizService) {}
 
   ngOnInit(): void {
-    if (this.cookieService.get('dark') == 'true') {
-      this.ativo = true;
-    } else {
-      this.ativo = false;
+    if (this.cookieService.check('dark')) {
+      if (this.cookieService.get('dark') == 'true') {
+        this.ativo = true;
+      } else {
+        this.ativo = false;
+      }
     }
     this.onListar();
   }
@@ -41,10 +45,19 @@ export class HomeComponent implements OnInit{
   }
 
   onListar(): void {
-    this.quizServico.getQuizzes().subscribe((quizzes: any) => {
-      this.quizzes = quizzes.content;
-      console.log(quizzes);
-    });
+    setTimeout(() => {
+      this.quizServico.getQuizzes().subscribe((quizzes: any) => {
+        this.quizzes = quizzes.content;
+        console.log(quizzes);
+      });
+      this.quizServico.getUsuarioporEmail(this.cookieService.get('email')).subscribe((usuario: any) => {
+        this.cookieService.set('usuario_id', usuario.id);
+        this.cookieService.set('usuario_nome', usuario.nome);
+        this.usuario = usuario.nome;
+      }); 
+      this.email = this.cookieService.get('email');
+    }, 1000)
+    
   }
 
   jogar(quizId: any) {
