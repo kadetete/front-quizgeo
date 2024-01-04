@@ -11,12 +11,17 @@ import { QuizService } from '../quiz.service';
 })
 export class HomeComponent implements OnInit{
   quizzes: any[] = []
+  quizzesCopia: any[] = []
+  quizzesDestaque: any = [] =[]
   ativo: boolean = false;
   quizSelecionado: any = null;
   email: any = null;
   usuario: any = null;
   carregando: boolean = true;
   pontuacoes: any[] = [];
+  pontuacoesCopia: any[] = [];
+  pontuacaoPesquisada = '';
+  quizPesquisado = '';
 
   constructor(private router: Router, private temaServico: TemaService, private cookieService: CookieService, private quizServico: QuizService) {}
 
@@ -50,7 +55,8 @@ export class HomeComponent implements OnInit{
     setTimeout(() => {
       this.quizServico.getQuizzes().subscribe((quizzes: any) => {
         this.quizzes = quizzes.content;
-        console.log(quizzes);
+        this.quizzesCopia = quizzes.content;
+        this.quizzesDestaque = quizzes.content.slice(0, 3);
         this.carregando = false;
       });
       this.quizServico.getUsuarioporEmail(this.cookieService.get('email')).subscribe((usuario: any) => {
@@ -60,12 +66,36 @@ export class HomeComponent implements OnInit{
       });
       this.quizServico.getPontuacao(parseInt(this.cookieService.get('usuario_id'))).subscribe((pontuacoes: any) => {
         this.pontuacoes = pontuacoes;
-        console.log(pontuacoes);
+        this.pontuacoesCopia = pontuacoes;
       });
       this.email = this.cookieService.get('email');
     }, 1000)
     
   }
+
+  filtrarQuizzes(): void {
+    if (this.quizPesquisado) {
+      let quizpesquisa = this.quizPesquisado.toUpperCase();
+
+      this.quizzes = this.quizzesCopia.filter((quiz: any) => {
+        return quiz.nome.toUpperCase().includes(quizpesquisa);
+      });
+  } else {
+    this.quizzes = [...this.quizzesCopia];
+  }
+}
+
+filtrarPontuacoes(): void {
+  if (this.pontuacaoPesquisada) {
+    let pontuacaopesquisa = this.pontuacaoPesquisada.toUpperCase();
+
+    this.pontuacoes = this.pontuacoesCopia.filter((pontuacao: any) => {
+      return pontuacao.quiz.nome.toUpperCase().includes(pontuacaopesquisa);
+    });
+} else {
+  this.pontuacoes = [...this.pontuacoesCopia];
+}
+}
 
   jogar(quizId: any) {
     this.router.navigate([`/quiz/${quizId}`]);
