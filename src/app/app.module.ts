@@ -23,6 +23,8 @@ import { CreditosComponent } from './creditos/creditos.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { MenuComponent } from './menu/menu.component';
 import { TableModule } from 'primeng/table';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { TableModule } from 'primeng/table';
     InputSwitchModule,
     HttpClientModule,
     TableModule,
+    RadioButtonModule,
+    SelectButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
