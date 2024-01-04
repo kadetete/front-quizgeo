@@ -26,6 +26,7 @@ import { TableModule } from 'primeng/table';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ResultadoComponent } from './resultado/resultado.component';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ResultadoComponent } from './resultado/resultado.component';
     HttpClientModule,
     TableModule,
     RadioButtonModule,
-    SelectButtonModule
+    SelectButtonModule,
+    ProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

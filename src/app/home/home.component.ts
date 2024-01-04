@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit{
   quizSelecionado: any = null;
   email: any = null;
   usuario: any = null;
+  carregando: boolean = true;
+  pontuacoes: any[] = [];
 
   constructor(private router: Router, private temaServico: TemaService, private cookieService: CookieService, private quizServico: QuizService) {}
 
@@ -49,12 +51,17 @@ export class HomeComponent implements OnInit{
       this.quizServico.getQuizzes().subscribe((quizzes: any) => {
         this.quizzes = quizzes.content;
         console.log(quizzes);
+        this.carregando = false;
       });
       this.quizServico.getUsuarioporEmail(this.cookieService.get('email')).subscribe((usuario: any) => {
         this.cookieService.set('usuario_id', usuario.id);
         this.cookieService.set('usuario_nome', usuario.nome);
         this.usuario = usuario.nome;
-      }); 
+      });
+      this.quizServico.getPontuacao(parseInt(this.cookieService.get('usuario_id'))).subscribe((pontuacoes: any) => {
+        this.pontuacoes = pontuacoes;
+        console.log(pontuacoes);
+      });
       this.email = this.cookieService.get('email');
     }, 1000)
     

@@ -19,4 +19,8 @@ export class MenuComponent {
   home(): void {
     this.router.navigate(['/home']);
   }
+
+  sobre(): void {
+    this.router.navigate(['/sobre']);
+  }
 }
