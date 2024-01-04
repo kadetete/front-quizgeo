@@ -29,13 +29,13 @@
                 </p-carousel>
                 <br>
                 <br>
+                <h2 class="titulo">Todos os quizzes</h2>
+                <br>
+                <br>
                 <div class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (keyup)="filtrarQuizzes()" placeholder="Pesquisar quiz..." [(ngModel)]="quizPesquisado"/>
                 </div>
-                <h2 class="titulo">Todos os quizzes</h2>
-                <br>
-                <br>
                 <p-table [paginator]="true" [value]="quizzes" dataKey="id" [rows]="10"
                     [rowsPerPageOptions]="[10, 50, 100]" [autoLayout]="true" styleClass="p-datatable-striped" selectionMode="single"
                     [(selection)]="quizSelecionado">
