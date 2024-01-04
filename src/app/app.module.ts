@@ -25,6 +25,7 @@ import { MenuComponent } from './menu/menu.component';
 import { TableModule } from 'primeng/table';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { ResultadoComponent } from './resultado/resultado.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     SobreComponent,
     CreditosComponent,
     QuizComponent,
-    MenuComponent
+    MenuComponent,
+    ResultadoComponent
   ],
   imports: [
     BrowserModule,

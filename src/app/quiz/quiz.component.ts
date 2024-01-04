@@ -66,7 +66,8 @@ export class QuizComponent implements OnInit {
       } else {
         this.nota = 'S';
       }
-      this.quizService.cadastrarPontuacao(this.quiz.id, parseInt(this.cookieService.get('usuario_id')), this.pontuacao).subscribe({
+      alert('acabou!')
+      this.quizService.cadastrarPontuacao(this.pontuacao, parseInt(this.cookieService.get('usuario_id')), this.quiz.id).subscribe({
         next: (res: any) => {
           this.router.navigate([`/resultado/${this.pontuacao}/${this.nota}`]);
         }
