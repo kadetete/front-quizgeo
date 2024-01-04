@@ -7,6 +7,6 @@ RUN npm run build
 
 FROM docker.io/nginx:latest
 COPY default.conf /etc/nginx/conf.d/default.conf
-COPY --from=build frontend/dist/crud-carros /usr/share/nginx/html
+COPY --from=build frontend/dist/geoquiz /usr/share/nginx/html
 RUN chown -R nginx:nginx /usr/share/nginx/html/
 EXPOSE 80
